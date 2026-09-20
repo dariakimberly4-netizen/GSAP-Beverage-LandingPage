@@ -1,65 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Website</title>
-<link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06291f">
+  <title>The First Cup — GSAP Coffee Story</title>
+  <meta name="description" content="A cinematic single-cup coffee story built with GSAP and ScrollTrigger.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="progress" id="progress"></div>
 
-<div id="main">
-    <nav>
-      <a href="#">Logo</a>  
-      <div id="cntr-nav">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Shop</a>
-        <a href="#">Contact</a>
+  <nav class="nav">
+    <a class="brand" href="#top">THE FIRST CUP</a>
+    <div class="nav-links">
+      <a href="#journey">Journey</a>
+      <a href="#philippines">1997</a>
+      <a href="#finale">Story</a>
+    </div>
+    <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="grain"></div>
+      <div class="hero-year">1971</div>
+      <div class="hero-ring ring-a"></div>
+      <div class="hero-ring ring-b"></div>
+
+      <div class="hero-copy">
+        <span class="kicker">One cup · many chapters</span>
+        <h1>Follow the cup.</h1>
+        <p>Scroll backward through the story—coffee first, coffeehouse next, then a new chapter in the Philippines.</p>
+        <a class="cta" href="#journey">Begin the journey <span>↓</span></a>
       </div>
-   <i class="ri-menu-line"></i>
-    </nav>
-      <div class="one">
-        <h1>FANTA</h1>
-        <img id="fanta" src="https://maggiesfoodforthesoul.com/cdn/shop/files/Fanta.png?v=1715696920" alt="">
-       <img id="orange" src="https://static.vecteezy.com/system/resources/thumbnails/008/848/146/small/half-orange-fruit-sliced-transparency-background-fruit-object-top-view-png.png" alt="">
-        <img id="leaf1" src="https://png.pngtree.com/png-vector/20230918/ourmid/pngtree-tea-leaf-png-png-image_10117348.png" alt="">
-        <img id="leaf2" src="https://www.clipartmax.com/png/full/171-1717209_palm-tree-leaf-png-home-about-us-products-quality-csr-coconut-leaves.png" alt="">
+
+      <div class="cup-wrap" id="heroCup" role="button" tabindex="0" aria-label="Interactive Starbucks drink">
+        <span class="cup-glow"></span>
+        <img src="./assets/starbucks-drink.jpg" alt="Starbucks drink">
+        <span class="tap-label">TAP THE CUP</span>
       </div>
-      <div class="two">
-        <div class="lft-two">
-           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path fill="#e04428" d="M51.2,-57.7C64.5,-49.9,72,-32,71.2,-15.7C70.3,0.6,61,15.3,53.2,32.6C45.4,49.9,39.1,69.9,25.5,78.3C12,86.8,-8.7,83.7,-25.5,75.3C-42.3,66.9,-55.2,53.1,-61.4,37.7C-67.7,22.3,-67.3,5.2,-65,-12.2C-62.8,-29.6,-58.7,-47.3,-47.6,-55.6C-36.4,-63.8,-18.2,-62.5,0.4,-62.9C19,-63.4,37.9,-65.6,51.2,-57.7Z" transform="translate(100 100)" />
-</svg>
+
+      <div class="hero-note note-a">PIKE PLACE</div>
+      <div class="hero-note note-b">COFFEEHOUSE</div>
+      <div class="hero-note note-c">PHILIPPINES</div>
+    </section>
+
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>1971 · PIKE PLACE · 1981 · DISCOVERY · 1983 · MILAN · 1987 · NEW CHAPTER · 1997 · PHILIPPINES · </span>
+        <span>1971 · PIKE PLACE · 1981 · DISCOVERY · 1983 · MILAN · 1987 · NEW CHAPTER · 1997 · PHILIPPINES · </span>
+      </div>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="sticky">
+        <div class="scene-year" id="sceneYear">1971</div>
+
+        <div class="scene-copy scene active" data-scene="0">
+          <span>CHAPTER 01 · SEATTLE</span>
+          <h2>Coffee before coffeehouse.</h2>
+          <p>Starbucks began as a single store in Seattle’s historic Pike Place Market, offering fresh-roasted whole bean coffee.</p>
         </div>
-        <div class="rght-two">
-            <h1>Flavour Updated</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt maxime reprehenderit consequuntur, delectus numquam libero sunt voluptas fuga laudantium eligendi recusandae maiores ab debitis in quam obcaecati error officia. Nostrum, consectetur? Fugiat, deleniti neque ratione minima quibusdam, fugit impedit iure praesentium velit sunt magni maxime porro animi quasi harum consectetur nemo commodi vero eligendi, voluptate excepturi autem nam modi! Similique voluptates qui tempore, enim dolorem ipsam possimus ducimus nemo optio aliquid! Iure qui aliquam sunt placeat accusamus iusto officia neque velit reiciendis! Quas fugiat iusto at voluptate! Rem veniam, non quibusdam facere ullam, fugit nemo tenetur sint eaque perspiciatis vitae!</p>
+
+        <div class="scene-copy scene" data-scene="1">
+          <span>CHAPTER 02 · DISCOVERY</span>
+          <h2>A cup changes direction.</h2>
+          <p>Howard Schultz first encountered Starbucks in 1981 and joined the company the following year.</p>
+        </div>
+
+        <div class="scene-copy scene" data-scene="2">
+          <span>CHAPTER 03 · MILAN</span>
+          <h2>The cup becomes a place.</h2>
+          <p>Inspired by Italian coffee bars, the vision expands from coffee retail into a warm place for conversation, ritual and community.</p>
+        </div>
+
+        <div class="scene-copy scene" data-scene="3">
+          <span>CHAPTER 04 · NEW CHAPTER</span>
+          <h2>The story moves forward.</h2>
+          <p>In 1987, Starbucks entered a new era that carried the coffeehouse idea far beyond its Seattle beginnings.</p>
+        </div>
+
+        <div class="journey-orbit" id="journeyOrbit"></div>
+        <div class="journey-cup" id="journeyCup">
+          <img src="./assets/starbucks-drink.jpg" alt="Starbucks drink moving through the story">
+        </div>
+
+        <div class="dots" aria-hidden="true">
+          <i class="active"></i><i></i><i></i><i></i>
         </div>
       </div>
-      <div class="three">
-        <div class="card">
-          <img class="lemon1"src="https://static.vecteezy.com/system/resources/thumbnails/046/622/601/small/a-slice-of-lemon-on-a-transparent-background-png.png" alt="">
-          <h1>Sprite</h1>
-          <img id="sprite" src="https://static.vecteezy.com/system/resources/previews/054/850/763/non_2x/sprite-can-isolated-on-transparent-background-free-png.png" alt="">
-          <button>Buy Now</button>
-        </div>
-        <div class="card">
-           <h1>Fanta</h1>
-           
-          <button>Buy Now</button>
-        </div>
-        <div class="card">
-           <h1>Pepsi</h1>
-           <img class="lemon2"src="https://static.vecteezy.com/system/resources/thumbnails/046/622/601/small/a-slice-of-lemon-on-a-transparent-background-png.png" alt="">
-           <img id="pepsi" src="https://static.vecteezy.com/system/resources/previews/052/610/767/non_2x/can-of-pepsi-isolated-on-transparent-background-free-png.png" alt="">
-          <button>Buy Now</button>
+    </section>
+
+    <section class="philippines" id="philippines">
+      <div class="philippines-number">1997</div>
+      <div class="philippines-inner">
+        <div class="big-6750">6750</div>
+        <div class="philippines-copy">
+          <span class="kicker">STARBUCKS PHILIPPINES</span>
+          <h2>A new market. A familiar ritual.</h2>
+          <p>The first Starbucks store in the Philippines opened on December 4, 1997 at the 6750 Ayala Building in Makati City.</p>
+          <div class="mini-line"><b>MAKATI CITY</b><span>December 4 · 1997</span></div>
         </div>
       </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="app.js"></script>   
+    </section>
+
+    <section class="words">
+      <div class="word coffee">COFFEE</div>
+      <div class="word craft">CRAFT</div>
+      <div class="word connection">CONNECTION</div>
+      <div class="center-cup">
+        <img src="./assets/starbucks-drink.jpg" alt="Starbucks drink">
+      </div>
+    </section>
+
+    <section class="finale" id="finale">
+      <div class="final-ring"></div>
+      <div class="final-copy">
+        <span class="kicker">THE CUP KEEPS MOVING</span>
+        <h2>Not a normal beverage page.</h2>
+        <p>This fork now uses GSAP as a cinematic storytelling engine: one drink, one continuous journey, and no product-card clutter.</p>
+        <a class="cta dark" href="#top">Replay the story <span>↑</span></a>
+        <div class="disclaimer">Unofficial portfolio concept. Not affiliated with or endorsed by Starbucks.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
